@@ -76,7 +76,7 @@ public class TemperatureTracker extends AbstractVerticle {
         // Creating router object
         Router router = Router.router(vertx);
         router.get("/all").handler(this::allData);
-        router.get("/last-give-minutes").handler(this::getLastFiveMinutes);
+        router.get("/last-five-minutes").handler(this::getLastFiveMinutes);
         router.get("/get/:uuid").handler(this::getDataByUuid);
         vertx.createHttpServer()
                 .requestHandler(router)
